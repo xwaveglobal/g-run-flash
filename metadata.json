@@ -1,0 +1,6 @@
+{
+  "name": "Run Flash",
+  "description": "High-speed 3D endless arcade sky runner and racing experience cloned from Sky Roadster.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
