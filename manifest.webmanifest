@@ -1,0 +1,33 @@
+{
+  "name": "Sky Roadster",
+  "short_name": "Sky Roadster",
+  "description": "Sky Roadster is a high-speed 3D endless runner. Pilot the XWAVE roadster through a neon sky-city: swipe left or right to switch lanes, up to fly over barriers, down to dive under beams. Collect energy coins, grab shields, magnets and turbo boosts, and chain near misses for combo points. Race five tracks from Future City to the XWAVE Megacity, or go Endless and chase your best score.",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#04071a",
+  "theme_color": "#04071a",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
