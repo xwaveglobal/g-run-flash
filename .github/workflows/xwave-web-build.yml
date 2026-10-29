@@ -1,0 +1,31 @@
+# Made by xwave-tool-games (Template library → "GitHub Actions build").
+# Builds the playable game on GitHub and publishes it to the "web-build" branch, which the tool imports —
+# the tool's server never runs this repo's code.
+name: xwave web build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: xwave-web-build
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: if [ -f package-lock.json ]; then npm ci --legacy-peer-deps; else npm install --legacy-peer-deps; fi
+      - run: npx vite build --base ./ --outDir xw-web-build --emptyOutDir
+      - run: echo "PUBLISH_DIR=xw-web-build" >> $GITHUB_ENV
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: web-build
+          publish_dir: ${{ env.PUBLISH_DIR }}
+          force_orphan: true
